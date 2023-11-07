@@ -1,0 +1,31 @@
+[build-system]
+requires = [
+  "setuptools >= 64",
+  "setuptools_scm >= 6.4"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fordscrape"
+requires-python = ">= 3.11"
+dependencies = []
+dynamic = ["version"]
+
+[project.scripts]
+fordscrape = "fordscrape.__main__:main"
+
+[tool.flake8]
+max-line-length = 88
+ignore = ["E203", "W503"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
+disallow_any_generics = false
+warn_return_any = false
+disallow_untyped_decorators = false
+disallow_subclassing_any = false
+show_error_codes = true
+
+[tool.setuptools_scm]
